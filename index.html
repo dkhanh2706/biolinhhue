@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bio Linh Huệ</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+        padding: 18px 12px;
+        color: #fff;
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(255, 255, 255, 0.12),
+            transparent 30%
+          ),
+          linear-gradient(
+            160deg,
+            #2d0b45 0%,
+            #6b1f75 35%,
+            #b83280 70%,
+            #ff7eb3 100%
+          );
+      }
+
+      .container {
+        width: 100%;
+        max-width: 430px;
+        margin: auto;
+      }
+
+      .profile {
+        text-align: center;
+        padding: 24px 15px;
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 10px 30px rgba(180, 70, 255, 0.25);
+        margin-bottom: 22px;
+      }
+
+      .profile img {
+        width: 105px;
+        height: 105px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.9);
+        margin-bottom: 12px;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      }
+
+      .profile h1 {
+        font-size: clamp(24px, 7vw, 30px);
+        margin-bottom: 8px;
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      }
+
+      .profile p {
+        font-size: clamp(13px, 3.8vw, 16px);
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .address {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        text-decoration: none;
+        color: #fff;
+        margin: 2px 0 10px;
+        padding: 8px 13px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 8px 20px rgba(255, 79, 163, 0.2);
+        font-size: clamp(12px, 3.4vw, 14px);
+        font-weight: 600;
+        transition: 0.25s ease;
+      }
+
+      .address:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .address-icon {
+        display: inline-block;
+        animation: bounceLocation 1.2s infinite ease-in-out;
+      }
+
+      @keyframes bounceLocation {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+
+        50% {
+          transform: translateY(-4px) scale(1.15);
+        }
+      }
+
+      .link {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        color: #fff;
+        padding: 13px 14px;
+        margin-bottom: 16px;
+        border-radius: 50px;
+        background: linear-gradient(90deg, #ff4fa3, #b14dff);
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        box-shadow:
+          0 10px 25px rgba(180, 70, 255, 0.35),
+          0 0 20px rgba(255, 79, 163, 0.18);
+        transition: 0.25s ease;
+      }
+
+      .link:hover {
+        transform: translateY(-2px);
+      }
+
+      .link:active {
+        transform: scale(0.97);
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        flex-shrink: 0;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15);
+      }
+
+      .link-content {
+        flex: 1;
+        text-align: center;
+        padding-right: 8px;
+      }
+
+      .link-content h3 {
+        font-size: clamp(16px, 4.5vw, 19px);
+        margin-bottom: 3px;
+        font-weight: 700;
+      }
+
+      .link-content p {
+        font-size: clamp(12px, 3.3vw, 14px);
+        opacity: 0.95;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 24px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .heart {
+        position: fixed;
+        top: -20px;
+        color: rgba(255, 255, 255, 0.75);
+        animation: fall 4.5s linear forwards;
+        pointer-events: none;
+        opacity: 0.8;
+        z-index: -1;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 380px) {
+        body {
+          padding: 14px 9px;
+        }
+
+        .profile {
+          padding: 22px 12px;
+          border-radius: 28px;
+        }
+
+        .profile img {
+          width: 92px;
+          height: 92px;
+        }
+
+        .link {
+          gap: 10px;
+          padding: 12px;
+          min-height: 74px;
+        }
+
+        .icon {
+          width: 43px;
+          height: 43px;
+          font-size: 21px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="profile">
+        <img src="./img/linhhue.jpg" alt="avatar" />
+
+        <h1>Beauty Skin</h1>
+
+        <a
+          class="address"
+          href="https://www.google.com/maps?q=10.843306,106.646306"
+          target="_blank"
+        >
+          <span class="address-icon">📍</span>
+          <span>Nguyễn Văn Khối, Gò Vấp, TP.HCM</span>
+        </a>
+
+        <p>Chăm sóc da • Làm đẹp • Uốn mi</p>
+      </div>
+
+      <a
+        class="link"
+        href="https://www.facebook.com/share/1GjpFczqmL/?mibextid=wwXIfr"
+        target="_blank"
+      >
+        <div class="icon">🌸</div>
+        <div class="link-content">
+          <h3>Facebook của shop</h3>
+          <p>Theo dõi để nhận ưu đãi mới</p>
+        </div>
+      </a>
+
+      <a
+        class="link"
+        href="https://www.tiktok.com/@huee.lingg?is_from_webapp=1&sender_device=pc"
+        target="_blank"
+      >
+        <div class="icon">🎀</div>
+        <div class="link-content">
+          <h3>TikTok làm đẹp</h3>
+          <p>Video skincare, uốn mi, trị mụn</p>
+        </div>
+      </a>
+
+      <a class="link" href="https://zalo.me/0328246693" target="_blank">
+        <div class="icon">💬</div>
+        <div class="link-content">
+          <h3>Đặt lịch qua Zalo</h3>
+          <p>Tư vấn nhanh, phản hồi sớm</p>
+        </div>
+      </a>
+
+      <a class="link" href="#" target="_blank">
+        <div class="icon">✨</div>
+        <div class="link-content">
+          <h3>Combo chăm sóc da</h3>
+          <p>Sạch sâu • Căng bóng • Trắng sáng</p>
+        </div>
+      </a>
+
+      <a class="link" href="#" target="_blank">
+        <div class="icon">💅</div>
+        <div class="link-content">
+          <h3>Dịch vụ uốn mi</h3>
+          <p>Mi cong tự nhiên • Nhẹ nhàng</p>
+        </div>
+      </a>
+
+      <div class="footer">Linh Huẹ</div>
+    </div>
+
+    <script>
+      function createHeart() {
+        const heart = document.createElement("div");
+
+        heart.classList.add("heart");
+        heart.innerHTML = "♡";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 16 + 12 + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 4500);
+      }
+
+      setInterval(createHeart, 700);
+    </script>
+  </body>
+</html>

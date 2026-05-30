@@ -27,8 +27,8 @@
         background:
           radial-gradient(
             circle at top,
-            rgba(255, 255, 255, 0.12),
-            transparent 30%
+            rgba(255, 255, 255, 0.16),
+            transparent 32%
           ),
           linear-gradient(
             160deg,
@@ -49,27 +49,27 @@
         text-align: center;
         padding: 24px 15px;
         border-radius: 34px;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.13);
+        border: 1.5px solid rgba(255, 255, 255, 0.28);
         backdrop-filter: blur(16px);
-        box-shadow: 0 10px 30px rgba(180, 70, 255, 0.25);
+        box-shadow: 0 12px 35px rgba(180, 70, 255, 0.28);
         margin-bottom: 22px;
       }
 
       .profile img {
-        width: 105px;
-        height: 105px;
+        width: 108px;
+        height: 108px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid rgba(255, 255, 255, 0.9);
+        border: 4px solid rgba(255, 255, 255, 0.95);
         margin-bottom: 12px;
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 28px rgba(255, 255, 255, 0.3);
       }
 
       .profile h1 {
         font-size: clamp(24px, 7vw, 30px);
         margin-bottom: 8px;
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        text-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
       }
 
       .profile p {
@@ -117,25 +117,30 @@
       }
 
       .link {
-        min-height: 78px;
+        min-height: 88px;
         display: flex;
         align-items: center;
         gap: 14px;
         text-decoration: none;
         color: #fff;
-        padding: 13px 14px;
+        padding: 12px 14px;
         margin-bottom: 16px;
-        border-radius: 50px;
-        background: linear-gradient(90deg, #ff4fa3, #b14dff);
-        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(15px);
         box-shadow:
-          0 10px 25px rgba(180, 70, 255, 0.35),
-          0 0 20px rgba(255, 79, 163, 0.18);
+          0 10px 28px rgba(0, 0, 0, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.15);
         transition: 0.25s ease;
       }
 
       .link:hover {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow:
+          0 14px 32px rgba(0, 0, 0, 0.22),
+          0 0 22px rgba(255, 126, 179, 0.25);
       }
 
       .link:active {
@@ -143,33 +148,52 @@
       }
 
       .icon {
-        width: 48px;
-        height: 48px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.45);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 23px;
         flex-shrink: 0;
-        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15);
+        overflow: hidden;
+        box-shadow:
+          0 0 18px rgba(255, 255, 255, 0.25),
+          inset 0 0 10px rgba(255, 255, 255, 0.12);
+      }
+
+      .icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .icon-logo img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+        border-radius: 0;
       }
 
       .link-content {
         flex: 1;
-        text-align: center;
+        text-align: left;
         padding-right: 8px;
       }
 
       .link-content h3 {
         font-size: clamp(16px, 4.5vw, 19px);
-        margin-bottom: 3px;
+        margin-bottom: 4px;
         font-weight: 700;
       }
 
       .link-content p {
         font-size: clamp(12px, 3.3vw, 14px);
         opacity: 0.95;
+        line-height: 1.35;
       }
 
       .footer {
@@ -207,20 +231,25 @@
         }
 
         .profile img {
-          width: 92px;
-          height: 92px;
+          width: 94px;
+          height: 94px;
         }
 
         .link {
-          gap: 10px;
-          padding: 12px;
-          min-height: 74px;
+          gap: 11px;
+          padding: 11px;
+          min-height: 82px;
+          border-radius: 24px;
         }
 
         .icon {
-          width: 43px;
-          height: 43px;
-          font-size: 21px;
+          width: 58px;
+          height: 58px;
+        }
+
+        .icon-logo img {
+          width: 34px;
+          height: 34px;
         }
       }
     </style>
@@ -231,7 +260,7 @@
       <div class="profile">
         <img src="./img/lighue.jpg" alt="avatar" />
 
-        <h1>Beauty Skin</h1>
+        <h1>Linh Hue Facial & Lash✨</h1>
 
         <a
           class="address"
@@ -242,7 +271,7 @@
           <span>Nguyễn Văn Khối, Gò Vấp, TP.HCM</span>
         </a>
 
-        <p>Chăm sóc da • Làm đẹp • Uốn mi</p>
+        <p>Chăm sóc da • Uốn mi • Nối mi</p>
       </div>
 
       <a
@@ -250,7 +279,9 @@
         href="https://www.facebook.com/share/1GjpFczqmL/?mibextid=wwXIfr"
         target="_blank"
       >
-        <div class="icon">🌸</div>
+        <div class="icon icon-logo">
+          <img src="./img/fb.svg" alt="Facebook" />
+        </div>
         <div class="link-content">
           <h3>Facebook của shop</h3>
           <p>Theo dõi để nhận ưu đãi mới</p>
@@ -262,7 +293,9 @@
         href="https://www.tiktok.com/@huee.lingg?is_from_webapp=1&sender_device=pc"
         target="_blank"
       >
-        <div class="icon">🎀</div>
+        <div class="icon icon-logo">
+          <img src="./img/toptop.svg" alt="TikTok" />
+        </div>
         <div class="link-content">
           <h3>TikTok làm đẹp</h3>
           <p>Video skincare, uốn mi, trị mụn</p>
@@ -270,7 +303,9 @@
       </a>
 
       <a class="link" href="https://zalo.me/0865536573" target="_blank">
-        <div class="icon">💬</div>
+        <div class="icon icon-logo">
+          <img src="./img/zl.jpg" alt="Zalo" />
+        </div>
         <div class="link-content">
           <h3>Đặt lịch qua Zalo</h3>
           <p>Tư vấn nhanh, phản hồi sớm</p>
@@ -278,7 +313,9 @@
       </a>
 
       <a class="link" href="#" target="_blank">
-        <div class="icon">✨</div>
+        <div class="icon">
+          <img src="./img/da.jpg" alt="Chăm sóc da" />
+        </div>
         <div class="link-content">
           <h3>Combo chăm sóc da</h3>
           <p>Sạch sâu • Căng bóng • Trắng sáng</p>
@@ -286,14 +323,16 @@
       </a>
 
       <a class="link" href="#" target="_blank">
-        <div class="icon">💅</div>
+        <div class="icon">
+          <img src="./img/uonmi.jpg" alt="Uốn mi" />
+        </div>
         <div class="link-content">
           <h3>Dịch vụ uốn mi</h3>
           <p>Mi cong tự nhiên • Nhẹ nhàng</p>
         </div>
       </a>
 
-      <div class="footer">Linh Huẹ</div>
+      <div class="footer">Linh Huệ</div>
     </div>
 
     <script>
